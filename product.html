@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlexSneaks Product Section</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Link to your CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+  }
+  
+  /* Product Section Layout */
+  .product-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    animation: slideUp 2s ease forwards;
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 2; }
+  }
+  
+  /* Left Column */
+  .product-image-container {
+    flex: 1;
+    background: linear-gradient(to bottom, #93b8e8, #0a5bd7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 60px;
+    min-width: 300px;
+  }
+  
+  .product-image {
+    max-width: 100%;
+    height: auto;
+    transform: rotate(-15deg);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .product-image-container:hover .product-image {
+    transform: rotate(-15deg) scale(1.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Discount Badge */
+  .discount-badge {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    color: #e63946;
+    border: 4px solid #e63946;
+    border-radius: 50%;
+    padding: 20px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 18px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-image-container:hover .discount-badge {
+    transform: translateX(-50%) scale(1.1);
+  }
+  
+  /* Right Column */
+  .product-info {
+    flex: 1;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+  }
+  
+  .collection-tag {
+    color: #e63946;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .product-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 25px;
+  }
+  
+  .product-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  .know-more-link {
+    font-weight: 600;
+    color: #0c70f2;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .know-more-link:hover {
+    color: #063a94;
+    transform: translateX(5px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 991px) {
+    .product-container {
+      flex-direction: column;
+    }
+  
+    .product-image-container,
+    .product-info {
+      padding: 40px;
+      text-align: center;
+    }
+  
+    .product-image {
+      transform: rotate(0deg);
+    }
+  
+    .product-image-container:hover .product-image {
+      transform: scale(1.08);
+    }
+  
+    .discount-badge {
+      bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .product-title {
+      font-size: 28px;
+    }
+  
+    .product-description {
+      font-size: 14px;
+    }
+  
+    .discount-badge {
+      width: 80px;
+      height: 80px;
+      font-size: 14px;
+    }
+  }
+  
+</style>
+
+<body>
+
+  <section class="product-section">
+    <div class="product-container">
+
+      <!-- Left: Product Image -->
+      <div class="product-image-container">
+        <img src="img/giorgio-trovato-LV_4qM5Gf9c-unsplash.jpg" alt="FlexSneaks Shoe" class="product-image" />
+        <div class="discount-badge">45% OFF</div>
+      </div>
+
+      <!-- Right: Product Info -->
+      <div class="product-info">
+        <h4 class="collection-tag">HOT COLLECTION</h4>
+        <h2 class="product-title">Unleash Your Potential with FlexSneaks</h2>
+        <p class="product-description">
+          Elevate your performance and style with FlexSneaks, designed for ultimate comfort, durability, and support. From running trails to everyday wear.
+        </p>
+        <p class="product-description">
+          Our innovative technology provides unparalleled cushioning and stability, so you can move confidently with every step. Experience the perfect blend of style and function—step into greatness.
+        </p>
+        <a href="#" class="know-more-link">Know More Here</a>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
